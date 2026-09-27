@@ -1,0 +1,176 @@
+@font-face {
+  font-family: "flappyfont";
+  src: url("fonts/FlappybirdyRegular-KaBW.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "flappyfont";
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: #336b40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  color: #339900;
+}
+
+#display {
+  position: absolute;
+  height: 500px;
+  width: 600px;
+  background: url("imgs/background.png");
+  background-size: cover;
+  background-position: 0 0;
+  overflow: hidden;
+}
+
+#bird {
+  z-index: 500;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  background: url("imgs/bird.png");
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  transform: rotate(0);
+  animation: initialbird ease-in-out 1000ms forwards infinite;
+}
+
+@keyframes initialbird {
+  0% {
+    transform: rotate(0) translateY(-7px);
+  }
+  50% {
+    transform: rotate(0) translateY(7px);
+  }
+  100% {
+    transform: rotate(0) translateY(-7px);
+  }
+}
+
+#initial-menu {
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+#initial-menu > h2 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+#initial-menu > h2 > p {
+  font-size: 3rem;
+}
+
+#initial-menu > div > button {
+  color: #276607;
+  font-weight: bold;
+  border: solid 4px #5b9040;
+  background-color: #78d886;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+}
+
+#scoreScreen {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2rem;
+}
+
+#obstacleContainer {
+  z-index: 10;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.up,
+.down {
+  position: absolute;
+  height: 300px;
+  width: 50px;
+  background: rgb(13, 127, 31);
+  border: 5px solid #1c3c0b;
+  right: 0;
+}
+
+.up {
+  top: -26%;
+}
+
+.down {
+  bottom: -26%;
+}
+
+@keyframes obstacleAnimation {
+  from {
+    right: -10%;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    height: 90vh;
+  }
+  #display {
+    width: 100vw;
+    height: 80%;
+  }
+  #bird {
+    left: 35%;
+  }
+  .up,
+  .down {
+    height: 400px;
+  }
+}
+
+#loader-screen {
+  position: absolute;
+  inset: 0;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  color: #fff;
+  font-family: sans-serif;
+  transition: opacity 0.4s ease;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

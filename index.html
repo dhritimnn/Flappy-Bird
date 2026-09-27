@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="display">
+        <div id="loader-screen">
+            <div class="spinner"></div>
+            <p>Loading Game Assets...</p>
+        </div>
+
+
+        <div id="initial-menu">
+            <h2>
+                <p>Welcome to</p>Flappy Bird
+            </h2>
+            <div style="display: flex;flex-direction: row; gap: 10px">
+                <button id="playbtn">Tap to Begin</button>
+                <button id="homebtn" onclick="window.location.replace('')" style="display: none">Home</button>
+            </div>
+        </div>
+        <div id="bird"></div>
+        <div id="obstacleContainer">
+        </div>
+
+        <span id="scoreScreen">0</span>
+
+    </div>
+    <p style="font-family: sans-serif; color: rgb(14, 63, 25); position: absolute;bottom :10px; left: 10px">Create By
+        Dhritiman</p>
+
+    <script src="loading.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
