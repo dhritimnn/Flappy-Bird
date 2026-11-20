@@ -174,3 +174,20 @@ body {
     transform: rotate(360deg);
   }
 }
+
+@media (min-width: 200px) {
+  html{
+    font-size: 13px;
+  }
+  .up {
+  top: -80%;
+  width: 35px;
+}
+
+.down {
+  bottom: -80%;
+  width: 35px;
+}
+
+  
+}
